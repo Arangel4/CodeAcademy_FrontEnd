@@ -1,93 +1,104 @@
-import React, { Component } from "react";
-import { Button, CssBaseline, TextField, Grid, Box, Typography, Container, Avatar, FormControlLabel, Checkbox,  } from '@material-ui/core';
+import React, { Component } from 'react';
+import UserDashboard from './UserDashboard';
+import { Button, TextField, Typography, Container, CssBaseline, Avatar, FormControlLabel, Checkbox, Grid } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
-
-const login = () => {
+class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loggedIn: false,
+            seen: false
+        }
+    }
+    // Close from the sign in pop up box.
     handleClick = () => {
-    this.props.toggle();
-};
+        this.props.toggle();
+    };
 
-const togglePop = () => {
-    this.setState({
-        seen: !this.state.seen
-    });
-};
+    // Display the toggle box for Reset Password.
+    togglePop = () => {
+        this.setState({
+            seen: !this.state.seen
+        });
+    };
 
-const toggle = (e) => {
-    e.preventDefault();
-    this.setState({
-        loggedIn: !this.state.loggedIn
-    });
-};
-return (
-    this.state.loggedIn ? <UserDashboard /> : (
-        <Container component="main" maxWidth="xs">
-        <CssBaseline />
-            <div className="containerStyle">
-                <Avatar />
-                <br />
-                <Typography component="h1" variant="h5">
-                Sign in
-                </Typography>
-                <form className="formStyle" noValidate>
-                    <TextField
-                        variant="outlined"
-                        margin="normal"
-                        required
-                        fullWidth
-                        id="email"
-                        label="Email Address"
-                        name="email"
-                        autoComplete="email"
-                        autoFocus
-                    />
-                    <TextField
-                        variant="outlined"
-                        margin="normal"
-                        required
-                        fullWidth
-                        name="password"
-                        label="Password"
-                        type="password"
-                        id="password"
-                        autoComplete="current-password"
-                    />
-                    <FormControlLabel
-                        control={<Checkbox value="remember" color="primary" />}
-                        label="Remember me"
-                    />
-                    <div className="submitStyle">
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            color="primary"
-                            onClick={this.toggle}>
-                        Sign In
-                        </Button>
-                    </div>
-                        <Grid container>
-                            <Grid item xs>
-                                <div className="btn" onClick={this.togglePop}>
-                                    <Link>Forgot Password</Link>
+    // Change page when button is clicked.
+    toggle = (e) => {
+        e.preventDefault();
+        this.setState({
+            loggedIn: !this.state.loggedIn
+        });
+    }
+    render() {
+        console.log(`${this.state.loggedIn}`);
+        return(
+            this.state.loggedIn ? <UserDashboard /> : (
+                <div className="loginPopUpBackground">
+                    <div className="loginPopUpContent">
+                        <span className="close" onClick={this.handleClick}>
+                            &times;
+                        </span>
+                            <Container component="main" maxWidth="xs">
+                                <CssBaseline />
+                                <div className="loginContainerStyle">
+                                    <Avatar />
+                                    <br />
+                                    <Typography component="h1" variant="h5">
+                                        Sign in
+                                    </Typography>
+                                    <form className="loginFormStyle" noValidate>
+                                        <TextField
+                                            variant="outlined"
+                                            margin="normal"
+                                            required
+                                            fullWidth
+                                            id="email"
+                                            label="Email Address"
+                                            name="email"
+                                            autoComplete="email"
+                                            autoFocus
+                                        />
+                                        <TextField
+                                            variant="outlined"
+                                            margin="normal"
+                                            required
+                                            fullWidth
+                                            name="password"
+                                            label="Password"
+                                            type="password"
+                                            id="password"
+                                            autoComplete="current-password"
+                                        />
+                                        <FormControlLabel
+                                            control={<Checkbox value="remember" color="primary"/>}
+                                            label="Remember me"
+                                        />
+                                        <div className="loginSubmitStyle">
+                                            <Button
+                                                type="submit"
+                                                fullWidth
+                                                variant="contained"
+                                                color="primary"
+                                                onClick={this.toggle}>
+                                            Sign In
+                                            </Button>
+                                        </div>
+                                        <Grid container>
+                                            <Grid item xs>
+                                                <div onClick={this.togglePop}>
+                                                    <Link to="/reset-password" variant="body2">Forgot Password</Link>
+                                                </div>
+                                                {/* {this.state.seen ? <ResetPassword toggle={this.togglePop} /> : null} */}
+                                            </Grid>
+                                        </Grid>
+                                    </form>
                                 </div>
-                                {this.state.seen ? <PopUp toggle={this.togglePop} /> : null}
-                            </Grid>
-                    
-                            <Grid item xs>
-                                <Link to="/create-user-account" variant="body2">Create Account</Link> 
-                            </Grid>
-                    
-                            <Grid item>
-                                <Link to="/guest-login" variant="body2">Guest Login</Link>
-                            </Grid>
-                        </Grid>
-                    </form>
-            </div>
-                <Box mt={8}>
-                    <Copyright />
-                </Box>
-            </Container>
-        )
-    )
+                            </Container>
+                    </div>
+                </div>
+            ) 
+        );
+    }
 }
+export default Login;

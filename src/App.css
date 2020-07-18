@@ -3,8 +3,8 @@
 }
 
 .copyrightStyle {
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+
+  color: white;
 }
 
 .appBarStyle {
@@ -15,13 +15,15 @@
   flex-wrap: wrap;
 }
 
-.typeStyle {
-  flex-grow: 1;
+.typoStyle {
+  font-size: 5rem;
+  font-family: 'Lato', sans-serif;
 }
 
 .homeBackground {
   background-image: url("./images/image.JPG");
   opacity: 0.7;
+  padding-bottom: 4%;
 }
 
 .homeButton {
@@ -30,10 +32,93 @@
 
 .containerStyle {
   margin-top: 4%;
+  margin-bottom: 2%;
+}
+
+h2 {
+  font-family: 'Lato', sans-serif;
+  padding-bottom: 5%;
+}
+
+.homeDropDown {
+  width: 100px;
+  text-align: left;
 }
 
 .paperStyle {
-  height: 90vh;
+  height: 95vh;
   width: 80vh;
   margin-left: 10%;
+  padding-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.loginContainerStyle {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginFormStyle {
+  width: '100%';
+  margin-top: 5%;
+}
+
+.loginSubmitStyle {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.loginPopUpBackground {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.loginPopUpContent {
+  background-color: white;
+  position: absolute;
+  top: 5%;
+  left: 30%;
+  height: 90%;
+  width: 40%;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.close {
+  color: Black;
+  float: right;
+}
+
+.close:hover {
+  color: rgb(223, 23, 23);
+  cursor: pointer;
+}
+
+.resetBackground {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.resetContent {
+  background-color: white;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  height: 60%;
+  width: 40%;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid black;
 }
