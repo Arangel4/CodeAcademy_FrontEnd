@@ -122,3 +122,27 @@ h2 {
   border-radius: 5px;
   border: 2px solid black;
 }
+
+.profileButton {
+  margin-left: auto;
+  margin: 1px, 1.5px;
+}
+.userProfileContainer {
+  background-color: rgb(115, 117, 117);
+  padding-top: 5%;
+  padding-bottom: 5%;
+  align-content: center;
+}
+
+.userProfilePaperStyle {
+  margin-left: 15%;
+  align-content: center;
+  height: 80vh;
+  width: 150vh;
+}
+
+.userProfileGrid {
+  padding-top: 5%;
+  text-align: center;
+
+}

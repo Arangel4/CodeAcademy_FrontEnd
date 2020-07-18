@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Typography, Link, CssBaseline, AppBar, Toolbar, Button, FormControl, FormLabel, RadioGroup, Container, Paper, FormControlLabel, Radio, Checkbox, InputLabel, Select, Grid, MenuItem } from '@material-ui/core';
 import Login from './Login';
+import SearchIcon from '@material-ui/icons/Search';
 
 function Copyright() {
     return(
@@ -52,6 +53,14 @@ class Home extends Component {
                             <Typography className="typoStyle" variant="h6" color="inherit" noWrap>
                                 CareAmarillo
                             </Typography>
+                            {/* SHOULD BE IN USERDASHBOARD ONLY!!!! */}
+                            <div className="profileButton">
+                                <Link variant="h6" color="textPrimary" href="/user-profile">Profile</Link>
+                            </div>
+                            <div className="profileButton">
+                                <Link variant="h6" color="textPrimary" href="/user-shelter">Shelter</Link>
+                            </div>
+                            {/* INBETWEEN COMMENTS IN USERDASHBOARD ONLY!!!!! */}
                             <div className="homeButton">
                                 <Button href="#" color="primary" variant="outlined" onClick={this.togglePop}>
                                     Sign In
@@ -131,7 +140,7 @@ class Home extends Component {
                             </Grid>
                             <br />
                             <Button color="primary" variant="outlined">
-                                Search
+                                <SearchIcon /> Search
                             </Button>
                         </Paper> 
                     </Container>

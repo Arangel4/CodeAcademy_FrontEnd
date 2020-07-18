@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import UserDashboard from './UserDashboard';
 import { Button, TextField, Typography, Container, CssBaseline, Avatar, FormControlLabel, Checkbox, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import CloseIcon from '@material-ui/icons/Close';
 
 class Login extends Component {
     constructor(props) {
@@ -35,11 +36,12 @@ class Login extends Component {
     render() {
         console.log(`${this.state.loggedIn}`);
         return(
-            this.state.loggedIn ? <UserDashboard /> : (
+            <form onSubmit={this.props.handleLogin}>
+            // this.state.loggedIn ? <UserDashboard /> : (
                 <div className="loginPopUpBackground">
                     <div className="loginPopUpContent">
                         <span className="close" onClick={this.handleClick}>
-                            &times;
+                            <CloseIcon />
                         </span>
                             <Container component="main" maxWidth="xs">
                                 <CssBaseline />
@@ -98,7 +100,8 @@ class Login extends Component {
                             </Container>
                     </div>
                 </div>
-            ) 
+            // )
+            </form> 
         );
     }
 }
