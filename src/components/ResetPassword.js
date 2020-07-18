@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, CssBaseline, TextField, Grid, Typography, Container } from '@material-ui/core';
+import { Button, CssBaseline, TextField, Grid, Typography, Link, Container } from '@material-ui/core';
 
 
 export default class ResetPassword extends Component {
@@ -41,6 +41,9 @@ export default class ResetPassword extends Component {
                                 className="submitStyle">
                                 Send
                             </Button>
+                            <Grid>
+                                <Link href="/" variant="body2">Cancel</Link>
+                            </Grid>
                         </form>
                     </div>
                     </Container>

@@ -62,7 +62,7 @@ class Home extends Component {
                     </AppBar>
                     <Container className="containerStyle" fixed>
                         <Paper className="paperStyle">
-                        <h2>Help is one search away.</h2>
+                        {/* <h2>Help is one search away.</h2> */}
                             <Grid container spacing={4}>
                                 
                                 {/* RADIO BUTTON FOR GENDER */}

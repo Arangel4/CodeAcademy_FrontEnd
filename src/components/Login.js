@@ -11,6 +11,14 @@ class Login extends Component {
             seen: false
         }
     }
+    // Change page when button is clicked.
+    toggle = (e) => {
+        e.preventDefault();
+        this.setState({
+            loggedIn: !this.state.loggedIn
+        });
+    }
+
     // Close from the sign in pop up box.
     handleClick = () => {
         this.props.toggle();
@@ -23,13 +31,7 @@ class Login extends Component {
         });
     };
 
-    // Change page when button is clicked.
-    toggle = (e) => {
-        e.preventDefault();
-        this.setState({
-            loggedIn: !this.state.loggedIn
-        });
-    }
+    
     render() {
         console.log(`${this.state.loggedIn}`);
         return(
@@ -80,7 +82,7 @@ class Login extends Component {
                                                 fullWidth
                                                 variant="contained"
                                                 color="primary"
-                                                onClick={this.toggle}>
+                                                onClick={this.toggle} href="/user-dashboard">
                                             Sign In
                                             </Button>
                                         </div>
@@ -89,7 +91,6 @@ class Login extends Component {
                                                 <div onClick={this.togglePop}>
                                                     <Link to="/reset-password" variant="body2">Forgot Password</Link>
                                                 </div>
-                                                {/* {this.state.seen ? <ResetPassword toggle={this.togglePop} /> : null} */}
                                             </Grid>
                                         </Grid>
                                     </form>
