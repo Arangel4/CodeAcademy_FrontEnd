@@ -1,18 +1,25 @@
 import React, { Component } from "react";
 import { Button, CssBaseline, TextField, Grid, Typography, Link, Container } from '@material-ui/core';
-
+import CloseIcon from '@material-ui/icons/Close';
 
 export default class ResetPassword extends Component {
     handleClick = () => {
         this.props.toggle();
     };
 
+    // toggle = (e) => {
+    //     e.preventDefault();
+    //     this.setState({
+    //         loggedIn: !this.state.loggedIn
+    //     });
+    // }
+
     render() {
         return (
             <div className="resetBackground">
                 <div className="resetContent">
                 <span className="close" onClick={this.handleClick}>
-                    &times;
+                    <CloseIcon />
                 </span>
                 <Container component="main" maxWidth="xs">
                     <CssBaseline />
@@ -38,12 +45,10 @@ export default class ResetPassword extends Component {
                                 fullWidth
                                 variant="contained"
                                 color="primary"
-                                className="submitStyle">
+                                className="submitStyle" 
+                                onClick={this.toggle} href="/">
                                 Send
                             </Button>
-                            <Grid>
-                                <Link href="/" variant="body2">Cancel</Link>
-                            </Grid>
                         </form>
                     </div>
                     </Container>

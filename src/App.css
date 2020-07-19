@@ -3,8 +3,9 @@
 }
 
 .copyrightStyle {
-
-  color: white;
+  color: rgb(226, 9, 9);
+  padding-top: 5%;
+  font-weight: bold;
 }
 
 .appBarStyle {
@@ -16,18 +17,19 @@
 }
 
 .typoStyle {
-  font-size: 5rem;
-  font-family: 'Lato', sans-serif;
+  font-weight: bolder;
+  color: rgb(134, 39, 39);
 }
 
 .homeBackground {
   background-image: url("./images/image.JPG");
   opacity: 0.7;
-  padding-bottom: 4%;
+  padding-bottom: 1%;
 }
 
 .homeButton {
  margin-left: auto;
+ font-family: 'Lato', sans-serif;
 }
 
 .containerStyle {
@@ -37,15 +39,22 @@
 
 h2 {
   font-family: 'Lato', sans-serif;
-  padding-bottom: 5%;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 7%;
 }
 
 .homeDropDown {
-  width: 100px;
+  width: 130px;
   text-align: left;
 }
 
 .paperStyle {
+  text-align: center;
   height: 95vh;
   width: 80vh;
   margin-left: 10%;
@@ -124,25 +133,43 @@ h2 {
 }
 
 .profileButton {
-  margin-left: auto;
-  margin: 1px, 1.5px;
+  margin-left: 55%;
+  font-family: 'Lato', sans-serif;
 }
+
+.shelterButton {
+  margin-left: 6%;
+}
+
 .userProfileContainer {
-  background-color: rgb(115, 117, 117);
+  background-color: rgba(115, 117, 117, 0.479);
   padding-top: 5%;
-  padding-bottom: 5%;
+  padding-bottom: 3%;
   align-content: center;
 }
 
 .userProfilePaperStyle {
   margin-left: 15%;
   align-content: center;
-  height: 80vh;
+  height: 90vh;
   width: 150vh;
+  padding-right: 4%;
 }
 
 .userProfileGrid {
   padding-top: 5%;
   text-align: center;
 
+}
+
+.loginForgotPassword {
+  text-align: center;
+}
+
+.editStyle {
+  text-align: right;
+}
+
+.userProfileShelter {
+  text-align: right;
 }

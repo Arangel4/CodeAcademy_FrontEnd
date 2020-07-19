@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Typography, Link, CssBaseline, AppBar, Toolbar, Button, FormControl, FormLabel, RadioGroup, Container, Paper, FormControlLabel, Radio, Checkbox, InputLabel, Select, Grid, MenuItem } from '@material-ui/core';
+import { Typography, Link, CssBaseline, AppBar, Toolbar, Button, FormControl, Switch, FormLabel, RadioGroup, Container, Paper, FormControlLabel, Radio, Checkbox, InputLabel, Select, Grid, MenuItem, Box } from '@material-ui/core';
 import Login from './Login';
 import SearchIcon from '@material-ui/icons/Search';
 
 function Copyright() {
     return(
         <div className="copyrightStyle">
-            <Typography variant="body2" color="textSecondary" align="center">
+            <Typography variant="body2" align="center">
                 {'Copyright © '}
                 {new Date().getFullYear()}
                 {' '}
@@ -23,7 +23,8 @@ class Home extends Component {
     constructor(props){
         super(props);
         this.state = {
-            seen: false
+            seen: false,
+            checked: false
         }
         // const [value, setValue] = React.useState('female');
         // const [age, setChild] = React.useState('');
@@ -31,6 +32,10 @@ class Home extends Component {
         // const radioHandleChange = (event) => {
         //     setValue(event.target.value);
         // };
+    }
+
+    switchChange = (event) => {
+        this.setState({...this.state, [event.target.name]: event.target.checked});
     }
 
     // dropDownHandleChange = (event) => {
@@ -50,14 +55,16 @@ class Home extends Component {
                     <CssBaseline />
                     <AppBar className="appBarStyle" position="static" color="default" elevation={0}>
                         <Toolbar className="toolBarStyle">
-                            <Typography className="typoStyle" variant="h6" color="inherit" noWrap>
-                                CareAmarillo
-                            </Typography>
+                            <div className="typoStyle">
+                                <Typography variant="h4" color="inherit" noWrap>
+                                    CareAmarillo
+                                </Typography>
+                            </div>
                             {/* SHOULD BE IN USERDASHBOARD ONLY!!!! */}
                             <div className="profileButton">
                                 <Link variant="h6" color="textPrimary" href="/user-profile">Profile</Link>
                             </div>
-                            <div className="profileButton">
+                            <div className="shelterButton">
                                 <Link variant="h6" color="textPrimary" href="/user-shelter">Shelter</Link>
                             </div>
                             {/* INBETWEEN COMMENTS IN USERDASHBOARD ONLY!!!!! */}
@@ -71,24 +78,42 @@ class Home extends Component {
                     </AppBar>
                     <Container className="containerStyle" fixed>
                         <Paper className="paperStyle">
-                        {/* <h2>Help is one search away.</h2> */}
+                        <h2>Help is One Search Away</h2>
+                        <h5>Search for a shelter regarding your needs.</h5>
                             <Grid container spacing={4}>
                                 
                                 {/* RADIO BUTTON FOR GENDER */}
-                                <Grid item xs={6}>
+                                <Grid item xs={12} sm={6}>
                                     <FormControl component="fieldset">
                                     <FormLabel component="legend">Gender</FormLabel>
                                     <RadioGroup aria-label="gender" name="gender1" onChange={this.radioHandleChange}>
                                     {/*GOES ON LINE ABOVE BETWEEN NAME AND ONCHANGE value={value} */}
-                                    <FormControlLabel value="female" control={<Radio />} label="Female" />
-                                    <FormControlLabel value="male" control={<Radio />} label="Male" />
+                                    <FormControlLabel value="female" control={<Radio />} label="All Female" />
+                                    <FormControlLabel value="male" control={<Radio />} label="All Male" />
                                     <FormControlLabel value="coed" control={<Radio />} label="Co-ed" />
                                     </RadioGroup>
                                     </FormControl>
                                 </Grid>
-                                <Grid item xs={6}>
+                                <Grid item xs={12} sm={6}>
+                                    <FormControl component="fieldset">
+                                    <FormLabel component="legend">Stay</FormLabel>
+                                    <FormControlLabel
+                                    control={<Switch checked={this.props.checked} onChange={this.switchChange} name="1" />}
+                                    label="One Night"
+                                    />
+                                    <FormControlLabel
+                                    control={<Switch checked={this.props.checked} onChange={this.switchChange} name="2" />}
+                                    label="Temporary"
+                                    />
+                                    <FormControlLabel
+                                    control={<Switch checked={this.props.checked} onChange={this.switchChange} name="3" />}
+                                    label="Homeless"
+                                    />
+                                    </FormControl>
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
                                     <FormControl className="homeDropDown">
-                                    <InputLabel id="children-label">Children</InputLabel>
+                                    <InputLabel id="children-label"># of Children</InputLabel>
                                     <Select
                                         labelId="children-label"
                                         id="children"
@@ -110,7 +135,7 @@ class Home extends Component {
                                     </FormControl>
                                 </Grid>
                                 {/* DROP DOWN FOR SERVICES */}
-                                <Grid item xs={12}>
+                                <Grid item xs={12} sm={6}>
                                     <FormControl className="homeDropDown">
                                     <InputLabel id="service-label">Services</InputLabel>
                                     <Select
@@ -122,14 +147,12 @@ class Home extends Component {
                                             <MenuItem value={0}>Housing</MenuItem>
                                             <MenuItem value={1}>Rehabilitation</MenuItem>
                                             <MenuItem value={2}>Counciling</MenuItem>
+                                            <MenuItem value={3}>Volunteering</MenuItem>
                                     </Select>
                                     </FormControl>
                                 </Grid>
                                 <Grid item xs={12}>
                                     {/* CHECK BOX FOR MISC. */}
-                                    <FormControlLabel control={<Checkbox checked={StaticRange.checked} name="checked" />}
-                                    label="Temporary Stay"
-                                    />
                                     <FormControlLabel control={<Checkbox checked={StaticRange.checked} name="checked" />}
                                     label="Warming Center"
                                     />
@@ -139,13 +162,16 @@ class Home extends Component {
                                 </Grid>
                             </Grid>
                             <br />
+                            <br />
                             <Button color="primary" variant="outlined">
                                 <SearchIcon /> Search
                             </Button>
                         </Paper> 
+                        <Box mt={5}>
+                            <Copyright />
+                        </Box>
                     </Container>
                 </div>
-            <Copyright />
             </div>
         )
     }

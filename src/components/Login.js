@@ -36,8 +36,8 @@ class Login extends Component {
     render() {
         console.log(`${this.state.loggedIn}`);
         return(
-            <form onSubmit={this.props.handleLogin}>
-            // this.state.loggedIn ? <UserDashboard /> : (
+            // <form onClick={this.state.handleLogin}>
+            this.state.loggedIn ? <UserDashboard /> : (
                 <div className="loginPopUpBackground">
                     <div className="loginPopUpContent">
                         <span className="close" onClick={this.handleClick}>
@@ -90,7 +90,7 @@ class Login extends Component {
                                         </div>
                                         <Grid container>
                                             <Grid item xs>
-                                                <div onClick={this.togglePop}>
+                                                <div onClick={this.togglePop} className="loginForgotPassword">
                                                     <Link to="/reset-password" variant="body2">Forgot Password</Link>
                                                 </div>
                                             </Grid>
@@ -100,8 +100,8 @@ class Login extends Component {
                             </Container>
                     </div>
                 </div>
-            // )
-            </form> 
+            )
+            // </form> 
         );
     }
 }
