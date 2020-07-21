@@ -2,91 +2,42 @@ import React, { Component } from 'react';
 import { Typography, Link, CssBaseline, AppBar, Toolbar, Button, FormControl, Switch, FormLabel, RadioGroup, Container, Paper, FormControlLabel, Radio, Checkbox, InputLabel, Select, Grid, MenuItem, Box } from '@material-ui/core';
 import Login from './Login';
 import SearchIcon from '@material-ui/icons/Search';
+import Copyright from './Copyright';
+import NavBar from './NavBar';
 
-function Copyright() {
-    return(
-        <div className="copyrightStyle">
-            <Typography variant="body2" align="center">
-                {'Copyright © '}
-                {new Date().getFullYear()}
-                {' '}
-                <Link color="inherit" href="/">
-                    CareAmarillo
-                </Link>
-                {'.'}
-            </Typography>
-        </div>
-    );
-}
 
-class Home extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            seen: false,
-            checked: false
-        }
-        // const [value, setValue] = React.useState('female');
-        // const [age, setChild] = React.useState('');
-
-        // const radioHandleChange = (event) => {
-        //     setValue(event.target.value);
-        // };
-    }
-
-    switchChange = (event) => {
+    const switchChange = (event) => {
         this.setState({...this.state, [event.target.name]: event.target.checked});
     }
+
+    // const [value, setValue] = React.useState('female');
+    // const [age, setChild] = React.useState('');
+
+    // const radioHandleChange = (event) => {
+    //     setValue(event.target.value);
+    // };
 
     // dropDownHandleChange = (event) => {
     //     setChild(event.target.value);
     // }
 
-    togglePop = () => {
-        this.setState({
-            seen: !this.state.seen
-        });
-    }
-
-    render() {
+const Home = (props) => {
         return (
             <div>
                 <div className="homeBackground">
                     <CssBaseline />
-                    <AppBar className="appBarStyle" position="static" color="default" elevation={0}>
-                        <Toolbar className="toolBarStyle">
-                            <div className="typoStyle">
-                                <Typography variant="h4" color="inherit" noWrap>
-                                    CareAmarillo
-                                </Typography>
-                            </div>
-                            {/* SHOULD BE IN USERDASHBOARD ONLY!!!! */}
-                            <div className="profileButton">
-                                <Link variant="h6" color="textPrimary" href="/user-profile">Profile</Link>
-                            </div>
-                            <div className="shelterButton">
-                                <Link variant="h6" color="textPrimary" href="/user-shelter">Shelter</Link>
-                            </div>
-                            {/* INBETWEEN COMMENTS IN USERDASHBOARD ONLY!!!!! */}
-                            <div className="homeButton">
-                                <Button href="#" color="primary" variant="outlined" onClick={this.togglePop}>
-                                    Sign In
-                                </Button>
-                                {this.state.seen ? <Login toggle={this.togglePop} /> : null}
-                            </div>
-                        </Toolbar>
-                    </AppBar>
+                    <NavBar />
                     <Container className="containerStyle" fixed>
                         <Paper className="paperStyle">
-                        <h2>Help is One Search Away</h2>
+                        {/* <h2>Help is One Search Away</h2> */}
                         <h5>Search for a shelter regarding your needs.</h5>
                             <Grid container spacing={4}>
-                                
                                 {/* RADIO BUTTON FOR GENDER */}
                                 <Grid item xs={12} sm={6}>
                                     <FormControl component="fieldset">
                                     <FormLabel component="legend">Gender</FormLabel>
-                                    <RadioGroup aria-label="gender" name="gender1" onChange={this.radioHandleChange}>
+                                    <RadioGroup aria-label="gender" name="gender1">  
+                                    {/* onChange={this.radioHandleChange} */}
                                     {/*GOES ON LINE ABOVE BETWEEN NAME AND ONCHANGE value={value} */}
                                     <FormControlLabel value="female" control={<Radio />} label="All Female" />
                                     <FormControlLabel value="male" control={<Radio />} label="All Male" />
@@ -98,15 +49,15 @@ class Home extends Component {
                                     <FormControl component="fieldset">
                                     <FormLabel component="legend">Stay</FormLabel>
                                     <FormControlLabel
-                                    control={<Switch checked={this.props.checked} onChange={this.switchChange} name="1" />}
+                                    control={<Switch name="1" onChange={switchChange}/>}
                                     label="One Night"
                                     />
                                     <FormControlLabel
-                                    control={<Switch checked={this.props.checked} onChange={this.switchChange} name="2" />}
+                                    control={<Switch name="2" />}
                                     label="Temporary"
                                     />
                                     <FormControlLabel
-                                    control={<Switch checked={this.props.checked} onChange={this.switchChange} name="3" />}
+                                    control={<Switch name="3" />}
                                     label="Homeless"
                                     />
                                     </FormControl>
@@ -174,6 +125,5 @@ class Home extends Component {
                 </div>
             </div>
         )
-    }
 }
 export default Home

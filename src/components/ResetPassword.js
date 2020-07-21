@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, CssBaseline, TextField, Grid, Typography, Link, Container } from '@material-ui/core';
+import { Button, CssBaseline, TextField, Grid, Typography, Container } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
 export default class ResetPassword extends Component {

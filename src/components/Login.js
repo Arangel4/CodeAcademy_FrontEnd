@@ -9,12 +9,10 @@ class Login extends Component {
         super(props);
         this.state = {
             loggedIn: false,
-            seen: false
         }
     }
     // Change page when button is clicked.
     toggle = (e) => {
-        e.preventDefault();
         this.setState({
             loggedIn: !this.state.loggedIn
         });
@@ -36,7 +34,6 @@ class Login extends Component {
     render() {
         console.log(`${this.state.loggedIn}`);
         return(
-            // <form onClick={this.state.handleLogin}>
             this.state.loggedIn ? <UserDashboard /> : (
                 <div className="loginPopUpBackground">
                     <div className="loginPopUpContent">
@@ -101,7 +98,6 @@ class Login extends Component {
                     </div>
                 </div>
             )
-            // </form> 
         );
     }
 }

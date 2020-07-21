@@ -1,95 +1,84 @@
 import React, { Component } from 'react';
-import { Link, CssBaseline, AppBar, Toolbar, Button, Login, Box, Typography, Container, Paper, Grid } from '@material-ui/core';
+import { Link, CssBaseline, Box, Typography, Container, Paper, Grid, AccordionSummary, Accordion, AccordionDetails } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Copyright from './Copyright';
+import NavBar from './NavBar';
 
-function Copyright() {
-    return(
-        <div className="copyrightStyle">
-            <Typography variant="body2" color="textSecondary" align="center">
-                {'Copyright © '}
-                {new Date().getFullYear()}
-                {' '}
-                <Link color="inherit" href="/">
-                    CareAmarillo
-                </Link>
-                {'.'}
-            </Typography>
+const UserShelter = () => {
+
+    // const [expanded, setExpanded] = React.useState < string | false>(false);
+
+    // const accordionChange = (panel: string) => (event: React.ChangeEvent<{}>, isExpanded: boolean) => {
+    //     setExpanded(isExpanded ? panel : false);
+    // };
+    return (
+        <div>
+            <CssBaseline />
+                <NavBar />
+                <div className="userProfileContainer">
+                    <Container fixed>
+                        <Paper elevation={3} className="userProfilePaperStyle">
+                            <Grid className="userProfileGrid">
+                                <Grid item xs={12} sm={12} className="editStyle">
+                                    <EditIcon />
+                                </Grid>
+                                <Grid item xs={6} sm={6}>
+                                    <h2>Shelter Name</h2>
+                                </Grid>
+                                <Grid item xs={6} sm={6}>
+                                    <h2>Shelter Phone Number</h2>
+                                </Grid>
+                                <Grid item xs={6} sm={6}>
+                                    <h2>Shelter Hours</h2>
+                                </Grid>
+                                <Grid item xs={6} sm={6}>
+                                    <h2>Bed Availability</h2>
+                                </Grid>
+                                <Grid item xs={12} sm={12}>
+                                    <h2>Description</h2>
+                                </Grid> 
+                            </Grid>
+                            <div className="accordionStyle">
+                                <Accordion >
+                                {/* expanded={expanded === 'panel1'} */}
+                                {/* onChange={accordionChange('panel1')}> */}
+                                    <AccordionSummary
+                                    expandIcon={<ExpandMoreIcon />}
+                                    aria-controls="panel1bh-content"
+                                    id="panel1bh-header"
+                                    >
+                                        <Typography>General Settings</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Typography>
+                                            Hello!
+                                        </Typography>
+                                    </AccordionDetails>
+                                </Accordion>
+                                <Accordion >
+                                {/* expanded={expanded === 'panel2'} onChange={accordianChange('panel2')}> */}
+                                    <AccordionSummary
+                                    expandIcon={<ExpandMoreIcon />}
+                                    aria-controls="panel2bh-content"
+                                    id="panel2bh-header"
+                                    >
+                                        <Typography>Settings</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Typography>
+                                            World!
+                                        </Typography>
+                                    </AccordionDetails>
+                                </Accordion>
+                            </div>
+                        </Paper>
+                        <Box mt={5}>
+                            <Copyright />
+                        </Box>
+                    </Container>
+                </div>
         </div>
     );
-}
-
-class UserShelter extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-
-        }
-    }
-    render() {
-        return (
-            <div>
-                <CssBaseline />
-                    <AppBar className="appBarStyle" position="static" color="default" elevation={0}>
-                        <Toolbar className="toolBarStyle">
-                            <div className="typoStyle">
-                                <Typography variant="h4" color="inherit" noWrap>
-                                    CareAmarillo
-                                </Typography>
-                            </div>
-                            {/* SHOULD BE IN USERDASHBOARD ONLY!!!! */}
-                            <div className="profileButton">
-                                <Link variant="h6" color="textPrimary" href="/user-profile">Profile</Link>
-                            </div>
-                            <div className="shelterButton">
-                                <Link variant="h6" color="textPrimary" href="/user-shelter">Shelter</Link>
-                            </div>
-                            {/* INBETWEEN COMMENTS IN USERDASHBOARD ONLY!!!!! */}
-                            <div className="homeButton">
-                                <Button href="/" color="primary" variant="outlined" onClick={this.toggle}>
-                                    Sign Out
-                                </Button>
-                            </div>
-                        </Toolbar>
-                    </AppBar>
-                    <div className="userProfileContainer">
-                        <Container fixed>
-                            <Paper elevation={3} className="userProfilePaperStyle">
-                                <Grid className="userProfileGrid">
-                                    <Grid item xs={12} sm={12} className="editStyle">
-                                        <EditIcon />
-                                    </Grid>
-                                    <Grid item xs={6} sm={6}>
-                                        <h2>Shelter Name</h2>
-                                    </Grid>
-                                    <Grid item xs={6} sm={6}>
-                                        <h2>User Username</h2>
-                                    </Grid>
-                                    <Grid item xs={6} sm={6}>
-                                        <h2>User Password</h2>
-                                    </Grid>
-                                    <Grid item xs={6} sm={6}>
-                                        <h2>User Email</h2>
-                                    </Grid>
-                                    <Grid item xs={6} sm={6}>
-                                        <h2>User Phone</h2>
-                                    </Grid>
-                                    <Grid item xs={6} sm={12} className="userProfileShelter">
-                                        <h2>Shelter Administer</h2>
-                                    </Grid>
-                                    <Grid item xs={6} sm={12} className="userProfileShelter">
-                                        <li>Women's Downtown Shelter</li>
-                                    </Grid>
-                                    
-                                    
-                                </Grid>
-                            </Paper>
-                            <Box mt={5}>
-                                <Copyright />
-                            </Box>
-                        </Container>
-                    </div>
-            </div>
-        );
-    }
 }
 export default UserShelter;
