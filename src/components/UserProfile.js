@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CssBaseline, Box, Container, Paper, Grid } from '@material-ui/core';
+import { CssBaseline, Box, AppBar, Toolbar, Typography, Link, Button, Container, Paper, Grid } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 import Copyright from './Copyright';
 import NavBar from './NavBar';
@@ -15,7 +15,27 @@ class UserProfile extends Component {
         return (
             <div>
                 <CssBaseline />
-                    <NavBar />
+                <AppBar className="appBarStyle" position="static" color="default" elevation={0}>
+                        <Toolbar className="toolBarStyle">
+                        <div className="typoStyle">
+                            <Typography variant="h4" color="inherit" noWrap>
+                                CareAmarillo
+                            </Typography>
+                        </div>
+                            <div className="profileButton">
+                                <Link variant="h6" color="textPrimary" href="/user-profile">Profile</Link>
+                            </div>
+                            <div className="shelterButton">
+                                <Link variant="h6" color="textPrimary" href="/user-shelter">Shelter</Link>
+                            </div>
+                            <div className="homeButton">
+                                <Button href="#" color="primary" variant="outlined" 
+                                onClick={this.toggleSignOut} href="/">
+                                    Sign Out
+                                </Button>
+                            </div>
+                        </Toolbar>
+                    </AppBar>
                     <div className="userProfileContainer">
                         <Container fixed>
                             <Paper elevation={3} className="userProfilePaperStyle">

@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-import { Typography, Link, CssBaseline, AppBar, Toolbar, Button, FormControl, Switch, FormLabel, RadioGroup, Container, Paper, FormControlLabel, Radio, Checkbox, InputLabel, Select, Grid, MenuItem, Box } from '@material-ui/core';
-import Login from './Login';
+import { CssBaseline, Button, FormControl, Switch, FormLabel, RadioGroup, Container, Paper, FormControlLabel, Radio, Checkbox, InputLabel, Select, Grid, MenuItem, Box } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import Copyright from './Copyright';
 import NavBar from './NavBar';
-
-
-    const switchChange = (event) => {
-        this.setState({...this.state, [event.target.name]: event.target.checked});
-    }
 
     // const [value, setValue] = React.useState('female');
     // const [age, setChild] = React.useState('');
@@ -21,7 +15,20 @@ import NavBar from './NavBar';
     //     setChild(event.target.value);
     // }
 
-const Home = (props) => {
+class Home extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            checked: false
+        }
+    }
+
+    switchChange = (event) => {
+        this.setState({...this.state, [event.target.name]: event.target.checked});
+    }
+
+
+    render() {
         return (
             <div>
                 <div className="homeBackground">
@@ -29,7 +36,7 @@ const Home = (props) => {
                     <NavBar />
                     <Container className="containerStyle" fixed>
                         <Paper className="paperStyle">
-                        {/* <h2>Help is One Search Away</h2> */}
+                        <h2>Help is One Search Away</h2>
                         <h5>Search for a shelter regarding your needs.</h5>
                             <Grid container spacing={4}>
                                 {/* RADIO BUTTON FOR GENDER */}
@@ -49,7 +56,7 @@ const Home = (props) => {
                                     <FormControl component="fieldset">
                                     <FormLabel component="legend">Stay</FormLabel>
                                     <FormControlLabel
-                                    control={<Switch name="1" onChange={switchChange}/>}
+                                    control={<Switch name="1" onChange={this.switchChange}/>}
                                     label="One Night"
                                     />
                                     <FormControlLabel
@@ -125,5 +132,6 @@ const Home = (props) => {
                 </div>
             </div>
         )
+    }
 }
 export default Home
