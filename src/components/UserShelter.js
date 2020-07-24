@@ -35,7 +35,7 @@ class UserShelter extends Component {
                                 <Link variant="h6" color="textPrimary" href="/user-shelter">Shelter</Link>
                             </div>
                             <div className="homeButton">
-                                <Button href="#" color="primary" variant="outlined" 
+                                <Button href="#" color="secondary" variant="outlined" 
                                 onClick={this.toggleSignOut} href="/">
                                     Sign Out
                                 </Button>

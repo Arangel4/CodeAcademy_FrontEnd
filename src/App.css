@@ -3,7 +3,7 @@
 }
 
 .copyrightStyle {
-  color: rgb(226, 9, 9);
+  color: black;
   padding-top: 5%;
   font-weight: bold;
 }
@@ -22,7 +22,7 @@
 }
 
 .homeBackground {
-  background-image: url("./images/image.JPG");
+  background-image: url("./images/PHP.jpg");
   opacity: 0.7;
   padding-bottom: 1%;
 }

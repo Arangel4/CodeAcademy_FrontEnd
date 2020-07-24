@@ -59,6 +59,7 @@ class Login extends Component {
                                             name="email"
                                             autoComplete="email"
                                             autoFocus
+                                            color="secondary"
                                         />
                                         <TextField
                                             variant="outlined"
@@ -70,9 +71,10 @@ class Login extends Component {
                                             type="password"
                                             id="password"
                                             autoComplete="current-password"
+                                            color="secondary"
                                         />
                                         <FormControlLabel
-                                            control={<Checkbox value="remember" color="primary"/>}
+                                            control={<Checkbox value="remember" color="secondary"/>}
                                             label="Remember me"
                                         />
                                         <div className="loginSubmitStyle">
@@ -80,7 +82,7 @@ class Login extends Component {
                                                 type="submit"
                                                 fullWidth
                                                 variant="contained"
-                                                color="primary"
+                                                color="secondary"
                                                 onClick={this.toggle} href="/user-dashboard">
                                             Sign In
                                             </Button>

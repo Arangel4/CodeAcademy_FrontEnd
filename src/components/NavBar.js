@@ -33,7 +33,7 @@ class NavBar extends Component {
                         </Typography>
                     </div>
                     <div className="homeButton">
-                        <Button href="#" color="primary" variant="outlined" onClick={this.togglePop}>
+                        <Button href="#" color="secondary" variant="outlined" onClick={this.togglePop}>
                             Sign In
                         </Button>
                         {this.state.seen ? <Login toggle={this.togglePop} /> : null}

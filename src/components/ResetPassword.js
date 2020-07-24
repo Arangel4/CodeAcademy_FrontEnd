@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Button, CssBaseline, TextField, Grid, Typography, Container } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
-export default class ResetPassword extends Component {
+class ResetPassword extends Component {
+
     handleClick = () => {
         this.props.toggle();
     };
@@ -37,6 +38,7 @@ export default class ResetPassword extends Component {
                                     label="Email Address"
                                     name="email"
                                     autoComplete="email"
+                                    color="secondary"
                                 />
                             </Grid>
                             <br />
@@ -44,7 +46,7 @@ export default class ResetPassword extends Component {
                                 type="send"
                                 fullWidth
                                 variant="contained"
-                                color="primary"
+                                color="secondary"
                                 className="submitStyle" 
                                 onClick={this.toggle} href="/">
                                 Send
@@ -57,4 +59,4 @@ export default class ResetPassword extends Component {
         );
     }
 }
-  
+export default ResetPassword; 

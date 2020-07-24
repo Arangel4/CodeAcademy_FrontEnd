@@ -71,10 +71,11 @@ class Home extends Component {
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
                                     <FormControl className="homeDropDown">
-                                    <InputLabel id="children-label"># of Children</InputLabel>
+                                    <InputLabel color="secondary" id="children-label"># of Children</InputLabel>
                                     <Select
                                         labelId="children-label"
                                         id="children"
+                                        color="secondary"
                                         // value={children}
                                         // onChange={dropDownHandleChange}
                                         >
@@ -95,10 +96,11 @@ class Home extends Component {
                                 {/* DROP DOWN FOR SERVICES */}
                                 <Grid item xs={12} sm={6}>
                                     <FormControl className="homeDropDown">
-                                    <InputLabel id="service-label">Services</InputLabel>
+                                    <InputLabel color="secondary" id="service-label">Services</InputLabel>
                                     <Select
                                         labelId="service-label"
                                         id="service"
+                                        color="secondary"
                                         // value={service}
                                         // onChange={dropDownHandleChange}
                                         >
@@ -121,7 +123,7 @@ class Home extends Component {
                             </Grid>
                             <br />
                             <br />
-                            <Button color="primary" variant="outlined">
+                            <Button color="secondary" variant="outlined" href="/shelter-search">
                                 <SearchIcon /> Search
                             </Button>
                         </Paper> 
