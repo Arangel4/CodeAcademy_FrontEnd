@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CssBaseline,  } from '@material-ui/core';
+import { CssBaseline, Table, TableHead, TableRow, TableBody, TableCell,  } from '@material-ui/core';
 import NavBar from './NavBar';
 
 class ShelterSearch extends Component {
@@ -14,6 +14,20 @@ class ShelterSearch extends Component {
             <div>
                 <CssBaseline />
                 <NavBar />
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Shelter Name</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    {/* <TableBody>
+                        {props.makes.map((row, index) => (
+                            <TableRow key={row.ShelterName}>
+                                <TableCell>{row["ShelterName"]}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody> */}
+                </Table>
             </div>
         );
     }

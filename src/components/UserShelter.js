@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CssBaseline, Box, Typography, AppBar, Toolbar, Link, Button, Container, Paper, Grid, AccordionSummary, Accordion, AccordionDetails } from '@material-ui/core';
+import { CssBaseline, Box, Typography, AppBar, Toolbar, Link, Button, Container, Paper, Grid, AccordionSummary, Accordion, AccordionDetails, DialogTitle } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Copyright from './Copyright';
@@ -51,6 +51,9 @@ class UserShelter extends Component {
                                     </Grid>
                                     <Grid item xs={6} sm={6}>
                                         <h2>Shelter Name</h2>
+                                    </Grid>
+                                    <Grid>
+                                        <img src="./images.Shelter.jpg" />
                                     </Grid>
                                     <Grid item xs={6} sm={6}>
                                         <h2>Shelter Phone Number</h2>

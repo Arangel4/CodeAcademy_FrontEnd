@@ -32,7 +32,7 @@ class App extends Component {
       password: thePassword
     }
     // Make the requet of the neccessary endpoint to successfully authenticate.
-    fetch("http//localhost:3000/users/authenticate", {
+    fetch("http//localhost:3001/users/authenticate", {
       method: 'post',
       body: JSON.stringify(credentials),
     })
