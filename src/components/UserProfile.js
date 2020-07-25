@@ -1,71 +1,78 @@
 import React, { Component } from 'react';
-import { CssBaseline, Box, AppBar, Toolbar, Typography, Link, Button, Container, Paper, Grid } from '@material-ui/core';
+import { CssBaseline, Box, TextField, Container, Paper, Grid } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 import Copyright from './Copyright';
+import UserNavBar from './UserNavBar';
+import EdiText from 'react-editext';
 
 class UserProfile extends Component {
     constructor(props) {
         super(props)
         this.state = {
-
         }
+        
     }
+    onSave = (val) => {
+        console.log('Edited Value -> ', val);
+    }
+
     render() {
         return (
             <div>
                 <CssBaseline />
-                <AppBar className="appBarStyle" position="static" color="default" elevation={0}>
-                        <Toolbar className="toolBarStyle">
-                        <div className="typoStyle">
-                            <Typography variant="h4" color="inherit" noWrap>
-                                CareAmarillo
-                            </Typography>
-                        </div>
-                            <div className="profileButton">
-                                <Link variant="h6" color="textPrimary" href="/user-profile">Profile</Link>
-                            </div>
-                            <div className="shelterButton">
-                                <Link variant="h6" color="textPrimary" href="/user-shelter">Shelter</Link>
-                            </div>
-                            <div className="homeButton">
-                                <Button href="#" color="secondary" variant="outlined" 
-                                onClick={this.toggleSignOut} href="/">
-                                    Sign Out
-                                </Button>
-                            </div>
-                        </Toolbar>
-                    </AppBar>
+                <UserNavBar />
                     <div className="userProfileContainer">
                         <Container fixed>
                             <Paper elevation={3} className="userProfilePaperStyle">
                                 <Grid className="userProfileGrid">
-                                    <Grid item xs={12} sm={12} className="editStyle">
-                                        <EditIcon />
+                                    <div className="profileImage">
+                                    </div>
+                                    <div className="profileContent">
+
+                                    
+                                    <Grid item xs={6} sm={3} className="userInfo">
+                                        <EdiText
+                                        showButtonsOnHover
+                                        type="text"
+                                        value="John Doe"
+                                        onSave={this.onSave}>
+                                        </EdiText>
+                                        {/* <h2>John Doe</h2> */}
+                                    </Grid>
+                                    <Grid item xs={6} sm={3} className="">
+                                    <h3>Username: </h3>
+                                    <Grid item xs={6} sm={3}>
+                                        <EdiText
+                                            showButtonsOnHover
+                                            type="text"
+                                            value="testuser"
+                                            onSave={this.onSave}>
+                                        </EdiText>
+                                    </Grid>
+                                    
+                                        
                                     </Grid>
                                     <Grid item xs={6} sm={6}>
-                                        <h2>User First and Last Name</h2>
+                                        <h3>Password: test123</h3>
+                                        
                                     </Grid>
                                     <Grid item xs={6} sm={6}>
-                                        <h2>User Username</h2>
+                                        <h3>Email: jdoe@email.com</h3>
                                     </Grid>
                                     <Grid item xs={6} sm={6}>
-                                        <h2>User Password</h2>
+                                        <h3>Phone: (123) 456-7890</h3>
                                     </Grid>
-                                    <Grid item xs={6} sm={6}>
-                                        <h2>User Email</h2>
-                                    </Grid>
-                                    <Grid item xs={6} sm={6}>
-                                        <h2>User Phone</h2>
-                                    </Grid>
-                                    <Grid item xs={6} sm={12} className="userProfileShelter">
+                                    </div>
+                                </Grid>
+                                
+                                <div className="shelterAdmin">
+                                    <Grid item xs={6} sm={10} className="userProfileShelter">
                                         <h2>Shelter Administer</h2>
                                     </Grid>
-                                    <Grid item xs={6} sm={12} className="userProfileShelter">
+                                    <Grid item xs={6} sm={10} className="userProfileShelter">
                                         <li>Women's Downtown Shelter</li>
                                     </Grid>
-                                    
-                                    
-                                </Grid>
+                                </div> 
                             </Paper>
                             <Box mt={5}>
                                 <Copyright />

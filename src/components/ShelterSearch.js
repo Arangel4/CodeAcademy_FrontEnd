@@ -14,20 +14,22 @@ class ShelterSearch extends Component {
             <div>
                 <CssBaseline />
                 <NavBar />
-                <Table>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Shelter Name</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {/* {props.makes.map((row, index) => (
-                            <TableRow key={row.ShelterName}>
-                                <TableCell>{row["ShelterName"]}</TableCell>
+                <div className="tableContent">
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Shelter Name</TableCell>
                             </TableRow>
-                        ))} */}
-                    </TableBody>
-                </Table>
+                        </TableHead>
+                        <TableBody>
+                            {/* {props.ShelterName.map((row, index) => (
+                                <TableRow key={row.ShelterName}>
+                                    <TableCell>{row["ShelterName"]}</TableCell>
+                                </TableRow>
+                            ))} */}
+                        </TableBody>
+                    </Table>
+                </div>
             </div>
         );
     }

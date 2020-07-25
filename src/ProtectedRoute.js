@@ -12,11 +12,15 @@ const ProtectedRoute = ({component: Component, ...rest}) => {
         />
     );
 }
-const checkAuth = () => {
+const checkAuth = (JWT) => {
     // Returns true or false, based on successful authentication.
     // A successful authentication would be that state.JWT as an actual token.
     // For testing purpose, just return a bool value.
-    return false;
+    if (JWT != null) {
+        return true
+    } else {
+        return false
+    }
 }
 
 export default ProtectedRoute;

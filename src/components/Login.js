@@ -23,15 +23,21 @@ class Login extends Component {
         this.props.toggle();
     };
 
+    handleLogin = (e) => {
+        e.preventDefault();
+        this.setState({
+            loggedIn: !this.state.loggedIn
+        });
+    }
+
     
     render() {
         return(
-            // this.props.loggedIn ? <UserDashboard /> : (
-            <form onSubmit={this.props.handleLogin}>
+            this.props.loggedIn ? <UserDashboard /> : (
+            // <form onSubmit={(e) => this.handleLogin}>
                 <div className="loginPopUpBackground">
                     <div className="loginPopUpContent">
-                        <span className="close" 
-                        onClick={this.handleClick}
+                        <span className="close" onClick={this.handleClick}
                         >
                             <CloseIcon />
                         </span>
@@ -76,6 +82,7 @@ class Login extends Component {
                                                 fullWidth
                                                 variant="contained"
                                                 color="secondary"
+                                                onClick={this.toggle} href="/user-dashboard"
                                                 >
                                             Sign In
                                             </Button>
@@ -92,8 +99,8 @@ class Login extends Component {
                             </Container>
                     </div>
                 </div>
-            </form>
-            // )
+            // </form>
+            )
         );
     }
 }

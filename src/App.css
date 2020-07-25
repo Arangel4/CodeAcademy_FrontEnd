@@ -166,14 +166,51 @@ h5 {
   text-align: center;
 }
 
-.editStyle {
-  text-align: right;
-}
-
 .userProfileShelter {
   text-align: right;
 }
 
 .accordionStyle {
   margin-left: 5%;
+}
+
+.profileImage {
+  background-image: url('./images/Profile.jpg');
+  height: 170px;
+  width: 170px;
+  margin-left: 62%;
+  margin-top: 1%;
+}
+
+.shelterImage {
+  background-image: url('./images/Profile.jpg');
+  height: 170px;
+  width: 170px;
+  margin-left: 62%;
+  margin-top: 1%;
+}
+
+.shelterAdmin {
+  margin-top: -10%;
+  margin-left: 10%;
+}
+
+.userInfo {
+  margin: 10%;
+  font-size: 2rem;
+}
+
+.profileContent {
+  margin-top: -15%;
+  
+}
+
+.shelterContent {
+  margin-top: -10%;
+}
+
+.tableContent {
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
 }

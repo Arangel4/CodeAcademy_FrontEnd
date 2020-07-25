@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Home from '../components/Home';
+import UserProfile from '../components/UserProfile';
 
 // Import related actions
 
@@ -19,5 +19,5 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);
 // Now, in order to use the component tied to the Redux store, you will no longer import the component itself, but instead you will import this container in its place.

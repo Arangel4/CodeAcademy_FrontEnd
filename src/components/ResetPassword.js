@@ -3,23 +3,28 @@ import { Button, CssBaseline, TextField, Grid, Typography, Container } from '@ma
 import CloseIcon from '@material-ui/icons/Close';
 
 class ResetPassword extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            loggedIn:false
+        }
+    }
 
     handleClick = () => {
         this.props.toggle();
     };
 
-    // toggle = (e) => {
-    //     e.preventDefault();
-    //     this.setState({
-    //         loggedIn: !this.state.loggedIn
-    //     });
-    // }
+    toggle = () => {
+        this.setState({
+            loggedIn: !this.state.loggedIn
+        });
+    }
 
     render() {
         return (
             <div className="resetBackground">
                 <div className="resetContent">
-                <span className="close" onClick={this.handleClick}>
+                <span className="close" onClick={this.toggle} to="/">
                     <CloseIcon />
                 </span>
                 <Container component="main" maxWidth="xs">

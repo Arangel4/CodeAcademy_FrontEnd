@@ -10,7 +10,7 @@ import Login from './components/Login';
 import UserProfile from './components/UserProfile';
 import UserShelter from './components/UserShelter';
 import ShelterSearch from './components/ShelterSearch';
-import ProtectedRoute from './components/ProtectedRoute';
+import ProtectedRoute from '../src/ProtectedRoute';
 
 class App extends Component {
   constructor(props) {
@@ -32,6 +32,8 @@ class App extends Component {
       userName: theUsername,
       userPassword: thePassword
     }
+
+
     // fetch("http://localhost:3000/users/5f1a471bd71aa61fb4388246")
     // .then(response => response.json())
     // .then(theUser => {
@@ -69,11 +71,12 @@ class App extends Component {
           <Router>
             <Route exact path="/" component={ Home } />
             <Route path="/reset-password" component={ ResetPassword } />
-            <Route path="/login" render={(props) => <Login handleLogin={this.loginEventHandler} />} />
-            <ProtectedRoute path="/user-profile" component={ UserProfile } />
-            <ProtectedRoute path="/user-shelter" component={ UserShelter } />
+            {/* <Route path="/login" render={(props) => <Login handleLogin={this.loginEventHandler} />} /> */}
+            <Route path="/login" component={ Login } />
+            <Route path="/user-profile" component={ UserProfile } />
+            <Route path="/user-shelter" component={ UserShelter } />
             <Route path="/shelter-search" component={ ShelterSearch } />
-            <ProtectedRoute path="/user-dashboard" component={ UserDashboard } />
+            <Route path="/user-dashboard" component={ UserDashboard } />
           </Router>
         </div>
       </Provider>

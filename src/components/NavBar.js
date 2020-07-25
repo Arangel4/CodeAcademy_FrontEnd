@@ -19,7 +19,7 @@ class NavBar extends Component {
     }
     
     toggle = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         this.setState({
             loggedIn: !this.state.loggedIn
         });
