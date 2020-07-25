@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import UserDashboard from './UserDashboard';
 import { Button, TextField, Typography, Container, CssBaseline, Avatar, FormControlLabel, Checkbox, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import CloseIcon from '@material-ui/icons/Close';
+import UserDashboard from './UserDashboard';
 
 class Login extends Component {
     constructor(props) {
@@ -12,7 +12,7 @@ class Login extends Component {
         }
     }
     // Change page when button is clicked.
-    toggle = (e) => {
+    toggle = () => {
         this.setState({
             loggedIn: !this.state.loggedIn
         });
@@ -23,21 +23,16 @@ class Login extends Component {
         this.props.toggle();
     };
 
-    // Display the toggle box for Reset Password.
-    togglePop = () => {
-        this.setState({
-            seen: !this.state.seen
-        });
-    };
-
     
     render() {
-        console.log(`${this.state.loggedIn}`);
         return(
-            this.state.loggedIn ? <UserDashboard /> : (
+            // this.props.loggedIn ? <UserDashboard /> : (
+            <form onSubmit={this.props.handleLogin}>
                 <div className="loginPopUpBackground">
                     <div className="loginPopUpContent">
-                        <span className="close" onClick={this.handleClick}>
+                        <span className="close" 
+                        onClick={this.handleClick}
+                        >
                             <CloseIcon />
                         </span>
                             <Container component="main" maxWidth="xs">
@@ -54,10 +49,9 @@ class Login extends Component {
                                             margin="normal"
                                             required
                                             fullWidth
-                                            id="email"
-                                            label="Email Address"
-                                            name="email"
-                                            autoComplete="email"
+                                            id="userName"
+                                            label="User Name"
+                                            name="username"
                                             autoFocus
                                             color="secondary"
                                         />
@@ -66,11 +60,10 @@ class Login extends Component {
                                             margin="normal"
                                             required
                                             fullWidth
-                                            name="password"
+                                            name="userPassword"
                                             label="Password"
                                             type="password"
-                                            id="password"
-                                            autoComplete="current-password"
+                                            id="userPassword"
                                             color="secondary"
                                         />
                                         <FormControlLabel
@@ -83,13 +76,13 @@ class Login extends Component {
                                                 fullWidth
                                                 variant="contained"
                                                 color="secondary"
-                                                onClick={this.toggle} href="/user-dashboard">
+                                                >
                                             Sign In
                                             </Button>
                                         </div>
                                         <Grid container>
                                             <Grid item xs>
-                                                <div onClick={this.togglePop} className="loginForgotPassword">
+                                                <div className="loginForgotPassword">
                                                     <Link to="/reset-password" variant="body2">Forgot Password</Link>
                                                 </div>
                                             </Grid>
@@ -99,7 +92,8 @@ class Login extends Component {
                             </Container>
                     </div>
                 </div>
-            )
+            </form>
+            // )
         );
     }
 }

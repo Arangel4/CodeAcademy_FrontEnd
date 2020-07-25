@@ -20,13 +20,13 @@ class ShelterSearch extends Component {
                             <TableCell>Shelter Name</TableCell>
                         </TableRow>
                     </TableHead>
-                    {/* <TableBody>
-                        {props.makes.map((row, index) => (
+                    <TableBody>
+                        {/* {props.makes.map((row, index) => (
                             <TableRow key={row.ShelterName}>
                                 <TableCell>{row["ShelterName"]}</TableCell>
                             </TableRow>
-                        ))}
-                    </TableBody> */}
+                        ))} */}
+                    </TableBody>
                 </Table>
             </div>
         );

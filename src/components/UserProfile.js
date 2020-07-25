@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { CssBaseline, Box, AppBar, Toolbar, Typography, Link, Button, Container, Paper, Grid } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 import Copyright from './Copyright';
-import NavBar from './NavBar';
 
 class UserProfile extends Component {
     constructor(props) {

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { AppBar, Toolbar, Typography, Button } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Button, Link } from '@material-ui/core';
 import Login from './Login';
 
 class NavBar extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            seen: false
+            seen: false,
+            loggedIn: false
         }
     }
 
@@ -28,12 +29,12 @@ class NavBar extends Component {
             <AppBar className="appBarStyle" position="static" color="default" elevation={0}>
                 <Toolbar className="toolBarStyle">
                     <div className="typoStyle">
-                        <Typography variant="h4" color="inherit" noWrap>
-                            CareAmarillo
+                        <Typography  variant="h4" color="inherit" noWrap>
+                            <Link href="/" color="inherit">CareAmarillo</Link>
                         </Typography>
                     </div>
                     <div className="homeButton">
-                        <Button href="#" color="secondary" variant="outlined" onClick={this.togglePop}>
+                        <Button color="secondary" variant="outlined" onClick={this.togglePop}>
                             Sign In
                         </Button>
                         {this.state.seen ? <Login toggle={this.togglePop} /> : null}

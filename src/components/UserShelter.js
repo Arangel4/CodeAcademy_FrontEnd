@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CssBaseline, Box, Typography, AppBar, Toolbar, Link, Button, Container, Paper, Grid, AccordionSummary, Accordion, AccordionDetails, DialogTitle } from '@material-ui/core';
+import { CssBaseline, Box, Typography, AppBar, Toolbar, Link, Button, Container, Paper, Grid, AccordionSummary, Accordion, AccordionDetails } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Copyright from './Copyright';
@@ -36,7 +36,8 @@ class UserShelter extends Component {
                             </div>
                             <div className="homeButton">
                                 <Button href="#" color="secondary" variant="outlined" 
-                                onClick={this.toggleSignOut} href="/">
+                                // onClick={this.toggleSignOut} href="/"
+                                >
                                     Sign Out
                                 </Button>
                             </div>
@@ -53,7 +54,7 @@ class UserShelter extends Component {
                                         <h2>Shelter Name</h2>
                                     </Grid>
                                     <Grid>
-                                        <img src="./images.Shelter.jpg" />
+                                        <img src="./images.Shelter.jpg" alt="" />
                                     </Grid>
                                     <Grid item xs={6} sm={6}>
                                         <h2>Shelter Phone Number</h2>
