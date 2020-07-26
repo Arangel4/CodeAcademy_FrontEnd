@@ -33,6 +33,7 @@ class Form extends Component {
     }
     render() {
         return (
+            <form onSubmit={(e) => this.props.getAllShelter(e)}>
             <div>
                 <Container className="containerStyle" fixed>
                         <Paper className="paperStyle">
@@ -127,12 +128,14 @@ class Form extends Component {
                             </Grid>
                             <br />
                             <br />
-                            <Button color="secondary" variant="outlined" href="/shelter-search">
+                            <Button color="secondary" variant="outlined" 
+                            href="/shelter-search">
                                 <SearchIcon /> Search
                             </Button>
                         </Paper> 
                     </Container>
             </div>
+            </form>
         );
     }
 }

@@ -31,8 +31,6 @@ class UserShelter extends Component {
                                     <div className="shelterImage">
                                     </div>
                                     <div className="shelterContent">
-
-                                    
                                     <Grid item xs={6} sm={6}>
                                         <h2>Downtown Women's Center</h2>
                                     </Grid>
