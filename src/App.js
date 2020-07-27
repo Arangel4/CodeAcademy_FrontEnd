@@ -9,7 +9,7 @@ import ResetPassword from './components/ResetPassword';
 import Login from './components/Login';
 import UserProfile from './components/UserProfile';
 import UserShelter from './components/UserShelter';
-import ShelterSearch from './components/ShelterSearch';
+import ShelterSearch from './containers/ShelterSearch';
 import ProtectedRoute from '../src/ProtectedRoute';
 
 class App extends Component {
