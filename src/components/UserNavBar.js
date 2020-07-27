@@ -23,7 +23,7 @@ class UserNavBar extends Component {
                         <Toolbar className="toolBarStyle">
                         <div className="typoStyle">
                             <Typography variant="h4" color="inherit" noWrap>
-                                CareAmarillo
+                            <Link href="/user-dashboard" color="inherit">CareAmarillo</Link>
                             </Typography>
                         </div>
                             <div className="profileButton">

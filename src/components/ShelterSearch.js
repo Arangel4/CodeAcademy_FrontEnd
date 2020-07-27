@@ -1,5 +1,5 @@
 import React from 'react';
-import { CssBaseline, Table, TableHead, TableRow, TableBody, TableCell,  } from '@material-ui/core';
+import { CssBaseline, Table, TableHead, Button, TableRow, TableBody, TableCell,  } from '@material-ui/core';
 import NavBar from './NavBar';
 
 const ShelterSearch = (props) => {
@@ -15,6 +15,7 @@ const ShelterSearch = (props) => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
+                        
                         {props.allShelter.map((row, index) => (
                             <TableRow key={row["shelterName"]}>
                                 <TableCell>{row["shelterName"]}</TableCell>
