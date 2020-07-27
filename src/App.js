@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import store from './redux/store';
 import { Provider } from 'react-redux';
-import UserDashboard from './components/UserDashboard';
+import UserDashboard from './containers/UserDashboard';
 import ResetPassword from './components/ResetPassword';
 import Login from './components/Login';
 import UserProfile from './components/UserProfile';

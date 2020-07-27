@@ -10,7 +10,7 @@ export const getAllShelter = (e) => {
         })
         .then(res => res.json())
         .then(allShelterDocs => {
-            console.log("Passed Fetch!")
+            console.log("Passed Fetch!");
             const action = {
                 type: 'FETCH_SHELTER',
                 value: allShelterDocs

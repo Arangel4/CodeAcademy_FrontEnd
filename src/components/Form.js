@@ -6,16 +6,13 @@ class Form extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            checked: false,
-            children: null,
-            radioValue: null,
-            service: null
+            checked: true,
+            children: 0,
+            radioValue: "coed",
+            service: 0
         }
 
     }
-
-    // const [value, setValue] = React.useState('female');
-
     // switchChange = (event) => {
     //     this.setState({...this.state, [event.target.name]: event.target.checked});
     // }
@@ -24,16 +21,18 @@ class Form extends Component {
     //     setState(event.target.value);
     // };
 
-    // checkHandle = (event) => {
+    // checkHandle = (e) => {
     //     this.setState({ ...this.state, [event.target.name]: event.target.checked });
     // }
 
 
-dropDownHandleCharge = (e) => {
-    this.setState({
-        this.state.children: e.target.children;
-    });
-}
+    // dropDownHandleCharge = (e) => {
+    //     console.log(`The value is ${e.target.value}`);
+    //     this.setState({
+    //         children: e.target.value,
+    //         service: e.target.value
+    //     });
+    // }
 render() {
     return (
         <form onSubmit={(e) => this.props.getAllShelter(e)}>
@@ -43,13 +42,13 @@ render() {
                         <h2>Help is One Search Away</h2>
                         <h5>Search for a shelter regarding your needs.</h5>
                         <Grid container spacing={4}>
-
                             <Grid item xs={12} sm={6}>
                                 <FormControl component="fieldset">
                                     <FormLabel component="legend">Gender</FormLabel>
                                     <RadioGroup aria-label="gender" name="gender1"
                                         value={this.props.radioValue}
-                                        onChange={this.radioHandleChange}>
+                                        // onChange={this.radioHandleChange}
+                                        >
                                         <FormControlLabel value="female" control={<Radio />} label="All Female" />
                                         <FormControlLabel value="male" control={<Radio />} label="All Male" />
                                         <FormControlLabel value="coed" control={<Radio />} label="Co-ed" />
@@ -60,7 +59,9 @@ render() {
                                 <FormControl component="fieldset">
                                     <FormLabel component="legend">Stay</FormLabel>
                                     <FormControlLabel
-                                        control={<Switch name="1" onChange={this.switchChange} />}
+                                        control={<Switch name="1" 
+                                        // onChange={this.switchChange} 
+                                        />}
                                         label="One Night"
                                     />
                                     <FormControlLabel
@@ -81,8 +82,8 @@ render() {
                                         id="children"
                                         color="secondary"
                                         value={this.state.children}
-                                        onChange={this.dropDownHandleChange}
-                                    >
+                                        // onChange={this.dropDownHandleChange}
+                                        >
                                         <MenuItem value={0}>0</MenuItem>
                                         <MenuItem value={1}>1</MenuItem>
                                         <MenuItem value={2}>2</MenuItem>
@@ -97,7 +98,6 @@ render() {
                                     </Select>
                                 </FormControl>
                             </Grid>
-
                             <Grid item xs={12} sm={6}>
                                 <FormControl className="homeDropDown">
                                     <InputLabel color="secondary" id="service-label">Services</InputLabel>
@@ -106,8 +106,8 @@ render() {
                                         id="service"
                                         color="secondary"
                                         value={this.props.service}
-                                        onChange={this.dropDownHandleChange}
-                                    >
+                                        // onChange={this.dropDownHandleChange}
+                                        >
                                         <MenuItem value={0}>Housing</MenuItem>
                                         <MenuItem value={1}>Rehabilitation</MenuItem>
                                         <MenuItem value={2}>Counciling</MenuItem>
@@ -116,18 +116,14 @@ render() {
                                 </FormControl>
                             </Grid>
                             <Grid item xs={12}>
-
                                 <FormControlLabel control={<Checkbox checked={this.props.checked}
-                                    onChange={this.checkHandle}
+                                    // onChange={this.checkHandle}
                                     name="checked" />}
-                                    label="Warming Center"
-                                />
+                                    label="Warming Center"/>
                                 <FormControlLabel control={<Checkbox checked={this.props.checked}
-                                    onChange={this.checkHandle}
+                                    // onChange={this.checkHandle}
                                     name="checked" />}
-                                
-                                    label="Cooling Center"
-                                />
+                                    label="Cooling Center"/>
                             </Grid>
                         </Grid>
                         <br />
