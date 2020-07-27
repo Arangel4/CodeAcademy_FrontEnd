@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { CssBaseline, Box, Typography, Container, Paper, Grid, AccordionSummary, Accordion, AccordionDetails } from '@material-ui/core';
-import EditIcon from '@material-ui/icons/Edit';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import EdiText from 'react-editext';
 import Copyright from './Copyright';
 import UserNavBar from './UserNavBar';
+import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUncheckedOutlined';
 
 class UserShelter extends Component {
     constructor(props) {
@@ -11,6 +12,9 @@ class UserShelter extends Component {
         this.state = {
             state: ""
         }
+    }
+    onSave = (val) => {
+        console.log('Edited Value -> ', val);
     }
 
     // const [expanded, setExpanded] = React.useState < string | false>(false);
@@ -27,6 +31,9 @@ class UserShelter extends Component {
                     <div className="userProfileContainer">
                         <Container fixed>
                             <Paper elevation={3} className="userProfilePaperStyle">
+                                <Grid className="activeStyle">
+                                    <RadioButtonUncheckedIcon fontSize="large" color="primary"/>
+                                </Grid>
                                 <Grid className="userProfileGrid">
                                     <div className="shelterImage">
                                     </div>
@@ -35,7 +42,7 @@ class UserShelter extends Component {
                                         <h2>Downtown Women's Center</h2>
                                     </Grid>
                                     <Grid>
-                                        <img src="./images.Shelter.jpg" alt="" />
+                                        <img src="./images/Shelter.jpg" alt="" />
                                     </Grid>
                                     </div>
                                 </Grid>
@@ -52,7 +59,12 @@ class UserShelter extends Component {
                                         </AccordionSummary>
                                         <AccordionDetails>
                                             <Typography>
-                                                (123) 456-7890
+                                                <EdiText
+                                                    showButtonsOnHover
+                                                    type="text"
+                                                    value="(908) 765-4321"
+                                                    onSave={this.onSave}> 
+                                                </EdiText>
                                             </Typography>
                                         </AccordionDetails>
                                     </Accordion>
@@ -63,13 +75,18 @@ class UserShelter extends Component {
                                         aria-controls="panel2bh-content"
                                         id="panel2bh-header"
                                         >
-                                            <Typography>Shelter Hours</Typography>
+                                            <Typography>Hours</Typography>
                                         </AccordionSummary>
                                         <AccordionDetails>
                                             <Typography>
                                                 Monday - Friday
                                                 <br />
-                                                9AM to 5PM
+                                                <EdiText
+                                                    showButtonsOnHover
+                                                    type="text"
+                                                    value="9AM to 5PM"
+                                                    onSave={this.onSave}> 
+                                                </EdiText>
                                             </Typography>
                                         </AccordionDetails>
                                     </Accordion>
@@ -80,11 +97,16 @@ class UserShelter extends Component {
                                         aria-controls="panel3bh-content"
                                         id="panel3bh-header"
                                         >
-                                            <Typography>Shelter Address</Typography>
+                                            <Typography>Address</Typography>
                                         </AccordionSummary>
                                         <AccordionDetails>
                                             <Typography>
-                                                409 Monroe Street Amarillo, TX 79101
+                                                <EdiText
+                                                    showButtonsOnHover
+                                                    type="text"
+                                                    value="409 Monroe Street Amarillo, TX 79101"
+                                                    onSave={this.onSave}> 
+                                                </EdiText>
                                             </Typography>
                                         </AccordionDetails>
                                     </Accordion>
@@ -95,11 +117,16 @@ class UserShelter extends Component {
                                         aria-controls="panel4bh-content"
                                         id="panel4bh-header"
                                         >
-                                            <Typography>Shelter Description</Typography>
+                                            <Typography>Description</Typography>
                                         </AccordionSummary>
                                         <AccordionDetails>
                                             <Typography>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et felis luctus, sagittis odio id, tincidunt lectus. Sed porta lectus ultricies mi malesuada tempus. Fusce eget est nec lorem vehicula luctus. Nunc mollis, turpis ac malesuada feugiat, lectus nibh pulvinar metus, eu mollis velit nisl varius mi. Mauris vitae pretium metus. Maecenas interdum est eu urna imperdiet suscipit. Sed tincidunt tortor nec scelerisque pulvinar. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer ac ultrices nisi. Cras at augue euismod, malesuada quam in, dapibus velit.
+                                                <EdiText
+                                                    showButtonsOnHover
+                                                    type="text"
+                                                    value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et felis luctus, sagittis odio id, tincidunt lectus. Sed porta lectus ultricies mi malesuada tempus. Fusce eget est nec lorem vehicula luctus. Nunc mollis, turpis ac malesuada feugiat, lectus nibh pulvinar metus, eu mollis velit nisl varius mi. Mauris vitae pretium metus. Maecenas interdum est eu urna imperdiet suscipit. Sed tincidunt tortor nec scelerisque pulvinar. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer ac ultrices nisi. Cras at augue euismod, malesuada quam in, dapibus velit."
+                                                    onSave={this.onSave}> 
+                                                </EdiText>
                                             </Typography>
                                         </AccordionDetails>
                                     </Accordion>
@@ -115,9 +142,19 @@ class UserShelter extends Component {
                                         </AccordionSummary>
                                         <AccordionDetails>
                                             <Typography>
-                                                Total:
+                                                <EdiText
+                                                    showButtonsOnHover
+                                                    type="text"
+                                                    value=" Total: 50"
+                                                    onSave={this.onSave}> 
+                                                </EdiText>
                                                 <br />
-                                                Available:
+                                                <EdiText
+                                                    showButtonsOnHover
+                                                    type="text"
+                                                    value="Available: 25"
+                                                    onSave={this.onSave}> 
+                                                </EdiText>
                                             </Typography>
                                         </AccordionDetails>
                                     </Accordion>

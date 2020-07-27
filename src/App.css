@@ -159,7 +159,6 @@ h5 {
 .userProfileGrid {
   padding-top: 5%;
   text-align: center;
-
 }
 
 .loginForgotPassword {
@@ -178,21 +177,21 @@ h5 {
   background-image: url('./images/Profile.jpg');
   height: 170px;
   width: 170px;
-  margin-left: 62%;
-  margin-top: 1%;
+  margin-left: 130%;
+  margin-top: 15%;
 }
 
 .shelterImage {
-  background-image: url('./images/Profile.jpg');
-  height: 170px;
-  width: 170px;
+  background-image: url('./images/Shelter.jpg');
+  height: 200px;
+  width: 200px;
   margin-left: 62%;
-  margin-top: 1%;
+  margin-top: -5%;
 }
 
 .shelterAdmin {
-  margin-top: -10%;
-  margin-left: 10%;
+  margin-top: -25%;
+  margin-left: 25%;
 }
 
 .userInfo {
@@ -202,6 +201,8 @@ h5 {
 
 .profileContent {
   margin-top: -15%;
+  text-align: center;
+  font-size: 2rem;
   
 }
 
@@ -213,4 +214,15 @@ h5 {
   margin-top: 5%;
   margin-left: 15%;
   margin-right: 15%;
+}
+
+.profileTableContent {
+  margin-top: -10%;
+  margin-left: 5%;
+  margin-right: 50%;
+}
+
+.activeStyle {
+  margin-left: 3%;
+  margin-top: 5%;
 }
