@@ -14,6 +14,7 @@ class UserShelter extends Component {
             state: ""
         }
     }
+
     onSave = (val) => {
         console.log('Edited Value -> ', val);
     }
@@ -29,7 +30,6 @@ class UserShelter extends Component {
             return <Redirect to="/shelter-search" />;
         } else {
         return (
-            // <form >
                 <div>
                     <CssBaseline />
                     <NavBar />
@@ -38,7 +38,7 @@ class UserShelter extends Component {
                                 <Paper elevation={3} className="userProfilePaperStyle">
                                     <Grid className="userProfileGrid">
                                         <Grid item xs={12} sm={1} className="backArrowStyle">
-                                            <Link href="/shelter-search"><ArrowBackIcon fontSize="large" 
+                                            <Link href="/shelter-search"><ArrowBackIcon color="secondary" fontSize="large" 
                                             onClick={(e) => this.props.getAllShelter(e)}/></Link>
                                         </Grid>
                                         <Grid item xs={6} sm={12}>
@@ -146,7 +146,6 @@ class UserShelter extends Component {
                             </Container>
                         </div>
                 </div>
-            // </form>
         );
         }
         

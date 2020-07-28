@@ -14,16 +14,19 @@ class Form extends Component {
         }
 
     }
+    // Handles the values of the switch statement.
     switchChange = (event) => {
         this.setState({...this.state, [event.target.name]: event.target.checked});
     }
 
+    // Handles the values of the radio buttons.
     radioHandleChange = (e) => {
         this.setState({
             radioValue: e.target.value,
         });
     }
 
+    // Handles the values of the checkboxes.
     checkHandle = (e) => {
         // this.setState({ ...this.state, [event.target.name]: event.target.checked });
         this.setState({
@@ -31,7 +34,7 @@ class Form extends Component {
         });
     }
 
-
+    // Handles the value change of the dropdowns.
     dropDownHandleCharge = (e) => {
         console.log(`The value is ${e.target.value}`);
         this.setState({
@@ -48,9 +51,11 @@ render() {
                 <div>
                     <Container className="containerStyle" fixed>
                         <Paper className="paperStyle">
-                            <h2>Help is One Search Away</h2>
-                            <h5>Search for a shelter regarding your needs.</h5>
+                            <h2>Search for a shelter regarding<br /> your needs.</h2>
+                            {/* <h5>Search for a shelter regarding your needs.</h5> */}
+                            <br />
                             <Grid container spacing={4}>
+                                {/* Gender Radio Button */}
                                 <Grid item xs={12} sm={6}>
                                     <FormControl component="fieldset">
                                         <FormLabel component="legend">Gender</FormLabel>
@@ -64,6 +69,7 @@ render() {
                                         </RadioGroup>
                                     </FormControl>
                                 </Grid>
+                                {/* Stay Radio Button */}
                                 <Grid item xs={12} sm={6}>
                                     <FormControl component="fieldset">
                                         <FormLabel component="legend">Stay</FormLabel>
@@ -83,6 +89,7 @@ render() {
                                         />
                                     </FormControl>
                                 </Grid>
+                                {/* Children Drop Down */}
                                 <Grid item xs={12} sm={6}>
                                     <FormControl className="homeDropDown">
                                         <InputLabel color="secondary" id="children-label"># of Children</InputLabel>
@@ -107,6 +114,7 @@ render() {
                                         </Select>
                                     </FormControl>
                                 </Grid>
+                                {/* Services Drop Down */}
                                 <Grid item xs={12} sm={6}>
                                     <FormControl className="homeDropDown">
                                         <InputLabel color="secondary" id="service-label">Services</InputLabel>
@@ -124,6 +132,7 @@ render() {
                                         </Select>
                                     </FormControl>
                                 </Grid>
+                                {/* Center Checkboxes */}
                                 <Grid item xs={12}>
                                     <FormControlLabel control={<Checkbox checked={this.props.checked}
                                         onChange={this.checkHandle}
@@ -137,8 +146,8 @@ render() {
                             </Grid>
                             <br />
                             <br />
-                            <Button color="secondary" variant="outlined" type="submit" 
-                            >
+                            {/* Search Button */}
+                            <Button color="secondary" variant="outlined" type="submit">
                                 <SearchIcon /> Search
                                 </Button>
                         </Paper>

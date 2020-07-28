@@ -37,8 +37,14 @@
   margin-bottom: 2%;
 }
 
+h1 {
+  font-family: 'Lato', sans-serif;
+  color: rgb(134, 33, 33);
+}
+
 h2 {
   font-family: 'Lato', sans-serif;
+  color: rgb(134, 33, 33);
   font-weight: bolder;
   font-size: 1.5rem;
 }
@@ -220,8 +226,8 @@ h5 {
 
 .tableContent {
   margin-top: 5%;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .profileTableContent {
@@ -234,3 +240,7 @@ h5 {
   margin-left: 3%;
   margin-top: 5%;
 }
+
+ .linkStyle {
+   padding-left: 3%;
+ }

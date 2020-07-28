@@ -15,13 +15,6 @@ class UserShelter extends Component {
     onSave = (val) => {
         console.log('Edited Value -> ', val);
     }
-
-    // const [expanded, setExpanded] = React.useState < string | false>(false);
-
-    // accordionChange = (panel: string) => (event: React.ChangeEvent<{}>, isExpanded: boolean) => {
-    //     setExpanded(isExpanded ? panel : false);
-    // };
-
     render(){
         return (
             <div>
@@ -46,8 +39,6 @@ class UserShelter extends Component {
                                 </Grid>
                                 <div className="accordionStyle">
                                     <Accordion >
-                                    {/* expanded={expanded === 'panel1'} */}
-                                    {/* onChange={accordionChange('panel1')}> */}
                                         <AccordionSummary
                                         expandIcon={<ExpandMoreIcon />}
                                         aria-controls="panel1bh-content"
@@ -67,7 +58,6 @@ class UserShelter extends Component {
                                         </AccordionDetails>
                                     </Accordion>
                                     <Accordion >
-                                    {/* expanded={expanded === 'panel2'} onChange={accordianChange('panel2')}> */}
                                         <AccordionSummary
                                         expandIcon={<ExpandMoreIcon />}
                                         aria-controls="panel2bh-content"
@@ -89,7 +79,6 @@ class UserShelter extends Component {
                                         </AccordionDetails>
                                     </Accordion>
                                     <Accordion >
-                                    {/* expanded={expanded === 'panel2'} onChange={accordianChange('panel2')}> */}
                                         <AccordionSummary
                                         expandIcon={<ExpandMoreIcon />}
                                         aria-controls="panel3bh-content"
@@ -109,7 +98,6 @@ class UserShelter extends Component {
                                         </AccordionDetails>
                                     </Accordion>
                                     <Accordion >
-                                    {/* expanded={expanded === 'panel2'} onChange={accordianChange('panel2')}> */}
                                         <AccordionSummary
                                         expandIcon={<ExpandMoreIcon />}
                                         aria-controls="panel4bh-content"
@@ -129,8 +117,6 @@ class UserShelter extends Component {
                                         </AccordionDetails>
                                     </Accordion>
                                     <Accordion >
-                                    {/* expanded={expanded === 'panel1'} */}
-                                    {/* onChange={accordionChange('panel1')}> */}
                                         <AccordionSummary
                                         expandIcon={<ExpandMoreIcon />}
                                         aria-controls="panel1bh-content"
