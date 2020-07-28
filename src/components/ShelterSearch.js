@@ -3,6 +3,8 @@ import { CssBaseline, Table, TableHead, TableRow, TableBody, TableCell,  } from 
 import NavBar from './NavBar';
 
 const ShelterSearch = (props) => {
+    console.log("In SS!");
+    console.log(props);
     return (
         <div>
             <CssBaseline />
