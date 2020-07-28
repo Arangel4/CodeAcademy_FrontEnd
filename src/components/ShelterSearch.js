@@ -1,7 +1,6 @@
 import React from 'react';
-import { CssBaseline, Table, TableHead, TableRow, TableBody, TableCell, Link  } from '@material-ui/core';
+import { CssBaseline, Table, TableHead, TableRow, TableBody, TableCell, Link } from '@material-ui/core';
 import NavBar from './NavBar';
-
 
 const ShelterSearch = (props) => {
     console.log("In SS!");
@@ -20,13 +19,15 @@ const ShelterSearch = (props) => {
                     <TableBody>
                         {props.allShelter.map((row, index) => (
                             <TableRow key={row["shelterName"]}>
-                                <TableCell><Link color="inherit" href="/shelter">{row["shelterName"]}</Link></TableCell>
+                                <TableCell>
+                                    <Link color="inherit" href="/shelter">{row["shelterName"]}</Link>
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
                 </Table>
             </div>
         </div>
-    ); 
+    );
 }
 export default ShelterSearch

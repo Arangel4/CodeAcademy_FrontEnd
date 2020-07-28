@@ -29,7 +29,7 @@ class UserShelter extends Component {
             return <Redirect to="/shelter-search" />;
         } else {
         return (
-            <form onClick={(e) => this.props.getAllShelter(e)}>
+            // <form >
                 <div>
                     <CssBaseline />
                     <NavBar />
@@ -38,7 +38,8 @@ class UserShelter extends Component {
                                 <Paper elevation={3} className="userProfilePaperStyle">
                                     <Grid className="userProfileGrid">
                                         <Grid item xs={12} sm={1} className="backArrowStyle">
-                                            <Link href="/shelter-search"><ArrowBackIcon fontSize="large"/></Link>
+                                            <Link href="/shelter-search"><ArrowBackIcon fontSize="large" 
+                                            onClick={(e) => this.props.getAllShelter(e)}/></Link>
                                         </Grid>
                                         <Grid item xs={6} sm={12}>
                                             <div className="shelterImage">
@@ -81,7 +82,7 @@ class UserShelter extends Component {
                                                 <Typography>
                                                     Monday - Friday
                                                     <br />
-                                                    value="9AM to 5PM
+                                                    value=9AM to 5PM
                                                 </Typography>
                                             </AccordionDetails>
                                         </Accordion>
@@ -145,7 +146,7 @@ class UserShelter extends Component {
                             </Container>
                         </div>
                 </div>
-            </form>
+            // </form>
         );
         }
         
