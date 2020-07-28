@@ -3,6 +3,7 @@ import { CssBaseline, Box } from '@material-ui/core';
 import Copyright from './Copyright';
 import Form from './Form';
 import UserNavBar from './UserNavBar';
+import Form from '../containers/Form';
 
 class UserDashboard extends Component {
     constructor(props){

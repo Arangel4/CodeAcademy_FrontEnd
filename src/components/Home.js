@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { CssBaseline, Box } from '@material-ui/core';
-import Form from './Form';
+import Form from '..containers/Form';
 import Copyright from './Copyright';
 import NavBar from './NavBar';
+
 
 class Home extends Component {
     constructor(props) {

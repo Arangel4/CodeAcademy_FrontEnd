@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, FormControl, Switch, FormLabel, RadioGroup, Container, Paper, FormControlLabel, Radio, Checkbox, InputLabel, Select, Grid, MenuItem } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
+import Form from '../containers/Form';
 
 class Form extends Component {
     constructor(props) {
