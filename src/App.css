@@ -143,8 +143,15 @@ h5 {
 
 .userProfileContainer {
   background-color: rgba(115, 117, 117, 0.479);
+  padding-top: 3%;
+  padding-bottom: 2%;
+  align-content: center;
+}
+
+.userShelterContainer {
+  background-color: rgba(115, 117, 117, 0.479);
   padding-top: 5%;
-  padding-bottom: 3%;
+  padding-bottom: 2%;
   align-content: center;
 }
 
@@ -178,7 +185,8 @@ h5 {
   height: 170px;
   width: 170px;
   margin-left: 130%;
-  margin-top: 15%;
+  margin-top: 5%;
+  
 }
 
 .shelterImage {
@@ -217,7 +225,7 @@ h5 {
 }
 
 .profileTableContent {
-  margin-top: -10%;
+  margin-top: -15%;
   margin-left: 5%;
   margin-right: 50%;
 }

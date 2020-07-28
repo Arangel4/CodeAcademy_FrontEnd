@@ -4,7 +4,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import EdiText from 'react-editext';
 import Copyright from './Copyright';
 import UserNavBar from './UserNavBar';
-import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUncheckedOutlined';
 
 class UserShelter extends Component {
     constructor(props) {
@@ -28,15 +27,14 @@ class UserShelter extends Component {
             <div>
                 <CssBaseline />
                 <UserNavBar />
-                    <div className="userProfileContainer">
+                    <div className="userShelterContainer">
                         <Container fixed>
                             <Paper elevation={3} className="userProfilePaperStyle">
-                                <Grid className="activeStyle">
-                                    <RadioButtonUncheckedIcon fontSize="large" color="primary"/>
-                                </Grid>
                                 <Grid className="userProfileGrid">
-                                    <div className="shelterImage">
-                                    </div>
+                                    <Grid item xs={6} sm={12}>
+                                        <div className="shelterImage">
+                                        </div>
+                                    </Grid>
                                     <div className="shelterContent">
                                     <Grid item xs={6} sm={6}>
                                         <h2>Downtown Women's Center</h2>

@@ -23,15 +23,20 @@ class UserProfile extends Component {
                     <div className="userProfileContainer">
                         <Container fixed>
                             <Paper elevation={3} className="userProfilePaperStyle">
-                                <Grid xs={12} sm={6}>
-                                    <div className="profileImage"></div>
-                                </Grid>
-                                    
+                                <div className="profileGrid">
+                                    <Grid item xs={12}>
+                                        <br />
+                                        <br />
+                                        <Grid itemx xs={12} sm={6}>
+                                            <div className="profileImage"></div>
+                                        </Grid>
+                                    </Grid>
+                                </div>
                                 <div className="profileTableContent">
                                     <Table>
                                         <TableHead className="profileContent">
                                             <EdiText
-                                                showButtonsOnHover
+                                                // showButtonsOnHover
                                                 type="text"
                                                 value="John Doe"
                                                 onSave={this.onSave}> 

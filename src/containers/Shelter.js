@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Home from '../components/Home';
+import Shelter from '../components/Shelter';
 import { getAllShelter } from '../redux/actions';
 
 // Import related actions
@@ -20,5 +20,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
-// Now, in order to use the component tied to the Redux store, you will no longer import the component itself, but instead you will import this container in its place.
+export default connect(mapStateToProps, mapDispatchToProps)(Shelter);

@@ -10,6 +10,7 @@ import Login from './components/Login';
 import UserProfile from './components/UserProfile';
 import UserShelter from './components/UserShelter';
 import ShelterSearch from './containers/ShelterSearch';
+import Shelter from './containers/Shelter';
 import ProtectedRoute from '../src/ProtectedRoute';
 
 class App extends Component {
@@ -77,6 +78,7 @@ class App extends Component {
             <Route path="/user-shelter" component={ UserShelter } />
             <Route path="/shelter-search" component={ ShelterSearch } />
             <Route path="/user-dashboard" component={ UserDashboard } />
+            <Route path="/shelter" component={ Shelter } />
           </Router>
         </div>
       </Provider>

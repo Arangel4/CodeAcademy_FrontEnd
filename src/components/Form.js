@@ -1,40 +1,44 @@
 import React, { Component } from 'react';
 import { Button, FormControl, Switch, FormLabel, RadioGroup, Container, Paper, FormControlLabel, Radio, Checkbox, InputLabel, Select, Grid, MenuItem } from '@material-ui/core';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
-import ShelterSearch from '../containers/ShelterSearch';
 
 class Form extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            checked: true,
-            children: 0,
-            radioValue: "coed",
-            service: 0
+            checked: "",
+            children: "",
+            radioValue: "both",
+            service: ""
         }
 
     }
-    // switchChange = (event) => {
-    //     this.setState({...this.state, [event.target.name]: event.target.checked});
-    // }
+    switchChange = (event) => {
+        this.setState({...this.state, [event.target.name]: event.target.checked});
+    }
 
-    // radioHandleChange = (event) => {
-    //     setState(event.target.value);
-    // };
+    radioHandleChange = (e) => {
+        this.setState({
+            radioValue: e.target.value,
+        });
+    }
 
-    // checkHandle = (e) => {
-    //     this.setState({ ...this.state, [event.target.name]: event.target.checked });
-    // }
+    checkHandle = (e) => {
+        // this.setState({ ...this.state, [event.target.name]: event.target.checked });
+        this.setState({
+            check: e.target.value
+        });
+    }
 
 
-    // dropDownHandleCharge = (e) => {
-    //     console.log(`The value is ${e.target.value}`);
-    //     this.setState({
-    //         children: e.target.value,
-    //         service: e.target.value
-    //     });
-    // }
+    dropDownHandleCharge = (e) => {
+        console.log(`The value is ${e.target.value}`);
+        this.setState({
+            children: e.target.value,
+            service: e.target.value
+        });
+    }
 render() {
     if (this.props.allShelter.length > 0) {
         return <Redirect to="/shelter-search" />;
@@ -52,11 +56,11 @@ render() {
                                         <FormLabel component="legend">Gender</FormLabel>
                                         <RadioGroup aria-label="gender" name="gender1"
                                             value={this.props.radioValue}
-                                            // onChange={this.radioHandleChange}
+                                            onChange={this.radioHandleChange}
                                             >
                                             <FormControlLabel value="female" control={<Radio />} label="All Female" />
                                             <FormControlLabel value="male" control={<Radio />} label="All Male" />
-                                            <FormControlLabel value="coed" control={<Radio />} label="Co-ed" />
+                                            <FormControlLabel value="both" control={<Radio />} label="Male & Female" />
                                         </RadioGroup>
                                     </FormControl>
                                 </Grid>
@@ -65,7 +69,7 @@ render() {
                                         <FormLabel component="legend">Stay</FormLabel>
                                         <FormControlLabel
                                             control={<Switch name="1" 
-                                            // onChange={this.switchChange} 
+                                            onChange={this.switchChange} 
                                             />}
                                             label="One Night"
                                         />
@@ -87,7 +91,7 @@ render() {
                                             id="children"
                                             color="secondary"
                                             value={this.state.children}
-                                            // onChange={this.dropDownHandleChange}
+                                            onChange={this.dropDownHandleChange}
                                             >
                                             <MenuItem value={0}>0</MenuItem>
                                             <MenuItem value={1}>1</MenuItem>
@@ -111,7 +115,7 @@ render() {
                                             id="service"
                                             color="secondary"
                                             value={this.props.service}
-                                            // onChange={this.dropDownHandleChange}
+                                            onChange={this.dropDownHandleChange}
                                             >
                                             <MenuItem value={0}>Housing</MenuItem>
                                             <MenuItem value={1}>Rehabilitation</MenuItem>
@@ -122,11 +126,11 @@ render() {
                                 </Grid>
                                 <Grid item xs={12}>
                                     <FormControlLabel control={<Checkbox checked={this.props.checked}
-                                        // onChange={this.checkHandle}
+                                        onChange={this.checkHandle}
                                         name="checked" />}
                                         label="Warming Center"/>
                                     <FormControlLabel control={<Checkbox checked={this.props.checked}
-                                        // onChange={this.checkHandle}
+                                        onChange={this.checkHandle}
                                         name="checked" />}
                                         label="Cooling Center"/>
                                 </Grid>
@@ -134,7 +138,6 @@ render() {
                             <br />
                             <br />
                             <Button color="secondary" variant="outlined" type="submit" 
-                            // component={Link} to="/shelter-search"
                             >
                                 <SearchIcon /> Search
                                 </Button>
