@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Home from '../components/Home';
+
 import { getAllShelter } from '../redux/actions';
 
 // Import related actions
