@@ -36,7 +36,7 @@ class UserProfile extends Component {
                                     <Table>
                                         <TableHead className="profileContent">
                                             <EdiText
-                                                // showButtonsOnHover
+                                                showButtonsOnHover
                                                 type="text"
                                                 value="John Doe"
                                                 onSave={this.onSave}> 

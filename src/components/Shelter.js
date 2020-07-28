@@ -82,7 +82,7 @@ class UserShelter extends Component {
                                                 <Typography>
                                                     Monday - Friday
                                                     <br />
-                                                    value=9AM to 5PM
+                                                    9AM to 5PM
                                                 </Typography>
                                             </AccordionDetails>
                                         </Accordion>
